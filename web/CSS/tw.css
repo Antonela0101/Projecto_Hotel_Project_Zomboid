@@ -1,0 +1,20 @@
+body{
+    margin: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: rgb(237, 234, 228);
+}
+
+section{
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 2.5rem 0;
+}
+
+section article{
+    background: yellow;
+    width: 700px;
+    height: 500px;
+}
+

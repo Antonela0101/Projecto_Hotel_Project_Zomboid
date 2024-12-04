@@ -1,0 +1,42 @@
+body{
+    margin: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    height: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+
+header{
+    display: flex;
+    background-color: #191617;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.15rem 3.5rem;
+    border-top: 35px solid black; 
+}
+
+header a{
+    
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    margin:0 5px 0 5px;
+}
+
+header div{
+    color: white;
+    
+}
+
+
+footer{
+    background-color: black;
+    color: white;
+    align-items: center;
+    width: 100%;
+    
+}
+footer div{
+    padding: 0.5rem 1.5rem;
+}
