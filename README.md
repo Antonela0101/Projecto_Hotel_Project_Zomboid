@@ -17,7 +17,7 @@ El proyecto consiste en el diseño de una pagina web para un hotel, mediante nea
 > ## BASE DE DATOS
 > >
 > > EMPLEADOS
-> >CREATE TABLE EMPLEADOS (
+> > CREATE TABLE EMPLEADOS (
     COD_E VARCHAR(5) ,
     NOMBRE VARCHAR (20),
     APELLIDO VARCHAR (40),
