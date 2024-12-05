@@ -14,6 +14,6 @@ El proyecto consiste en el diseño de una pagina web para un hotel, mediante nea
 > | `GlassFish` | 4.1.1      |
 
 >[!IMPORTANT]
->S
+>##BASE DE DATOS
 >SA
 >AS
