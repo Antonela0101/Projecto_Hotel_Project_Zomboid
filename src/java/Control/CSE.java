@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import servicio.servLogin;
 
 /**
  *
@@ -16,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet(name = "CSE", urlPatterns = {"/CSE"})
 public class CSE extends HttpServlet {
-    private mst mst;
+    
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -73,8 +74,18 @@ public class CSE extends HttpServlet {
         String TW=request.getParameter("TW");
         
         if(TW.equals("Iniciar Sesion")){
-            //request.getSession().setAttribute("mst", mst);
-            response.sendRedirect("GestionConsumo.jsp");
+            String use=request.getParameter("use");
+            String pass=request.getParameter("pass");
+            System.out.println("Validando empleado: Usuario=" + use + ", Contraseña=" + pass);
+            Object[]con=servLogin.Validar(use, pass);
+            if(con != null){
+                System.out.println("Empleado validado: " + con[0]);
+                request.getSession().setAttribute("con", con[0]);
+
+                response.sendRedirect("GestionConsumo.jsp");
+            }else{
+                response.sendRedirect("index.jsp");
+            }
         }
         
     }

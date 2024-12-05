@@ -1,4 +1,3 @@
-
 package persistencia;
 import java.sql.*;
 import java.util.ArrayList;
@@ -9,7 +8,7 @@ public class Acceso {
         Connection cn;
         try{
           Class.forName("org.apache.derby.jdbc.ClientDriver");  
-          cn=DriverManager.getConnection("jdbc:derby://localhost:1527/Hotel-Project-Zomboid","Kaiser","portal2");
+          cn=DriverManager.getConnection("jdbc:derby://localhost:1527/Hotel_Project_Tracer","Kaiser","guten");
         }catch(ClassNotFoundException e){
             cn=null;
         }catch(SQLException e){

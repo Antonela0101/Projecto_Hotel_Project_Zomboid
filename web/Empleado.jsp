@@ -32,8 +32,8 @@
                     </p>
                     <form action="CSE" method="POST">
                         <p>
-                            <input type="Text" name="Userr" placeholder="Usuario">
-                            <input type="Text" name="Pass" placeholder="Contraseña">
+                            <input type="Text" name="use" placeholder="Usuario">
+                            <input type="Text" name="pass" placeholder="Contraseña">
                         <p>
                         <input type="submit" name="TW" value="Iniciar Sesion" >
                     </form>
