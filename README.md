@@ -19,11 +19,11 @@ El proyecto consiste en el diseño de una pagina web para un hotel, mediante nea
 >  EMPLEADOS
 > ```
 >  CREATE TABLE EMPLEADOS (
-    COD_E VARCHAR(5) ,
-    NOMBRE VARCHAR (20),
-    APELLIDO VARCHAR (40),
-    USUAR VARCHAR (10),
-    PASSW VARCHAR (50),
-    PRIMARY KEY(COD_E)
-> );
+>    COD_E VARCHAR(5) ,
+>    NOMBRE VARCHAR (20),
+>    APELLIDO VARCHAR (40),
+>    USUAR VARCHAR (10),
+>    PASSW VARCHAR (50),
+>    PRIMARY KEY(COD_E)
+>  );
 > ```
