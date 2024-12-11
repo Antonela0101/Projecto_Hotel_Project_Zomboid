@@ -1,14 +1,15 @@
 package Control;
 
-import Servicio.ServicioCliente;
-import Servicio.ServicioHabitacion;
-import Servicio.ServicioReserva;
+import servicio.ServicioCliente;
+import servicio.ServicioHabitacion;
+import servicio.ServicioReserva;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import presentacion.ModeloHotel;
 
 @WebServlet(name = "ControlReserva", urlPatterns = {"/ControlReserva"})
 public class ControlReserva extends HttpServlet {
@@ -19,7 +20,7 @@ public class ControlReserva extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String acc = request.getParameter("acc");
-        if (acc.equals("Nueva Reserva")) {
+        if (acc.equals("Reserva")) {
             modelo = new ModeloHotel();
             servRes = new ServicioReserva();
             servCli = new ServicioCliente();
@@ -144,9 +145,13 @@ public class ControlReserva extends HttpServlet {
         if (acc.equals("Volver")) {
             response.sendRedirect("VistaReserva.jsp");
         }
+
+        if (acc.equals("Inicio")) {
+            response.sendRedirect("index.jsp");
+        }
         
         if (acc.equals("Listo")) {
-            response.sendRedirect("VistaMenu.jsp");
+            response.sendRedirect("index.jsp");
         }
         
     }
