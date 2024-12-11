@@ -1,0 +1,144 @@
+body {
+    background-color: #432818;
+    margin: 0;
+    font-family: Arial, sans-serif; 
+}
+
+div.container {
+    position: absolute;
+    width: 90%; 
+    max-width: 830px; 
+    height: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    background-color: #f7f3e0;
+    border-style: solid;
+    border-width: 4px;
+    text-align: center;
+    border-radius: 20px;
+    padding: 20px;
+    box-sizing: border-box; 
+}
+
+table {
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-collapse: collapse;
+}
+
+label {
+    background-color: #dcd6b8;
+    font-family: Georgia, sans-serif;
+    font-size: 1rem; 
+    font-weight: bold;
+    width: 100%;
+    text-align: left;
+    padding-left: 10px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+input.container,
+input.containerBig {
+    font-size: 1rem;
+    padding: 10px;
+    text-align: center;
+    width: 100%; 
+    box-sizing: border-box; 
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+input.containerBig {
+    width: 50%; 
+}
+
+div.inputContainer {
+    margin: 15px auto;
+    background-color: #dcd6b8;
+    border-width: 2px;
+    padding: 20px;
+    max-width: 800px;
+    text-align: left;
+    border-radius: 8px;
+}
+
+table td,
+table th {
+    padding: 10px;
+    font-family: Georgia, sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+table th {
+    background-color: silver;
+    font-family: Forte, serif;
+    font-style: italic;
+    color: black;
+}
+
+p {
+    font-family: sans-serif;
+    font-size: 1.2rem;
+    font-style: italic;
+    color: blue;
+}
+
+li {
+    display: inline-block;
+    padding: 8px;
+    border: 1px outset black;
+    background-color: goldenrod;
+    width: auto;
+    position: relative;
+    margin: 5px;
+}
+
+#m {
+    text-align: center;
+}
+
+.sm {
+    position: absolute;
+    top: 30px;
+    left: 1px;
+    display: none;
+}
+
+#m li:hover ul {
+   display: block;
+}
+
+#m li:hover {
+    background-color: gold;
+}
+
+a {
+    color: yellow;
+}
+
+input[type="submit"] {
+    background-color: #8c432c;
+    color: white;
+    border: none;
+    padding: 12px 24px; /* Mejor ajuste de padding */
+    font-size: 1rem; /* Tamaño más accesible */
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+input[type="submit"]:hover {
+    background-color: #8c5847;
+}
+
+input[type="submit"]:active {
+    background-color: #3e8e41;
+}  

@@ -114,8 +114,9 @@ public class Acceso {
             if (cn == null) {
                 msg = "No hay conexión con la Base de Datos";
             } else {
-                // Construir el comando SQL dinámico especificando columnas
+                
                 StringBuilder sql = new StringBuilder("INSERT INTO ").append(tabla).append(" (");
+                
                 for (int i = 0; i < columnas.length; i++) {
                     sql.append(columnas[i]);
                     if (i < columnas.length - 1) {
@@ -131,13 +132,12 @@ public class Acceso {
                 }
                 sql.append(")");
 
-                // Preparar el statement
+    
                 PreparedStatement ps = cn.prepareStatement(sql.toString());
                 for (int i = 0; i < valores.length; i++) {
                     ps.setObject(i + 1, valores[i]);
                 }
 
-                // Ejecutar el comando SQL
                 ps.executeUpdate();
                 cn.close();
             }
@@ -146,5 +146,68 @@ public class Acceso {
         }
         return msg;
     }
+    public static String guardarAlo(String sql, Object[] params) {
+        String msg = null;
+        Connection cn = null;
+        PreparedStatement ps = null;
+
+        try {
+            cn = getConexion();
+            if (cn == null) {
+                msg = "No hay conexión con la base de datos";
+                return msg;
+            }
+
+            ps = cn.prepareStatement(sql);
+
+            for (int i = 0; i < params.length; i++) {
+                ps.setObject(i + 1, params[i]);
+            }
+
+            ps.executeUpdate();
+        } catch (SQLException e) {
+            msg = "Error SQL: " + e.getMessage();
+        } finally {
+            try {
+                if (ps != null) {
+                    ps.close();
+                }
+                if (cn != null) {
+                    cn.close();
+                }
+            } catch (SQLException e) {
+                msg = "Error al cerrar recursos: " + e.getMessage();
+            }
+        }
+        System.out.println(msg);
+        return msg;
+    }
+    public static String getNumAlo(String sql) {
+        String numGen;
+        String numObt = null;
+        try {
+            Connection cn = getConexion();
+            if (cn == null) {
+                numGen = null;
+            } else {
+                Statement st = cn.createStatement();
+                ResultSet rs = st.executeQuery(sql);
+                while (rs.next()) {
+                    numObt = rs.getString(1);
+                }
+                String parInt = numObt.substring(2);
+                String parStr = numObt.substring(0, 1);
+                String nueParInt = String.valueOf(Integer.parseInt(parInt) + 1);
+                while (nueParInt.length() < 4) {
+                    nueParInt = "0" + nueParInt;
+                }
+                numGen = parStr + nueParInt;
+            }
+        } catch (SQLException e) {
+            System.out.println(e);
+            numGen = null;
+        }
+        System.out.println(numGen);
+        return numGen;
+    }
 }
-    

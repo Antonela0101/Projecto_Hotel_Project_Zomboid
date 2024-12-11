@@ -1,5 +1,7 @@
 package persistencia;
 
+import java.util.List;
+
 public class DaoReserva {
     public static String guardar(String[] columnas,Object[] datos) {
         return Acceso.guardar("reserva", columnas,datos);
@@ -10,5 +12,9 @@ public class DaoReserva {
         String num = Acceso.getNum(sql,"R");
         System.out.println("Número recuperado por Acceso.getNum: " + num);
         return num;
+    }
+    
+    public static List listar(){
+        return Acceso.listar("Select * from reserva");
     }
 }
