@@ -5,8 +5,8 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <style>@import "CSS/reserva.css";</style>
         <title>DOCUMENTO</title>
-        
     </head>
     <body>
         <% ModeloHotel modelo = (ModeloHotel) session.getAttribute("modelo"); %>
@@ -16,162 +16,163 @@
         <% String n = (String) request.getAttribute("num"); %>
         
         
-        <div class="container mt-5">
+        <div class="container-doc">
             <!-- Título -->
             <h1 class="text-center">DOCUMENTO</h1>
             <form action="ControlReserva" method="post">
                 <!-- Código Reserva y Fecha Reserva -->
-                <div class="row mb-4">
-                    <div class="col-md-6">
-                        <label for="cod" class="font-weight-bold">Código Reserva:</label>
+                <div class="contendedor-datos">
+                    <div class="row-info">
+                        <div class="contenedor-t">
+                            <label for="cod" class="titulo-info">Código Reserva:</label>
+                        </div>
+                        <div class="contenedor-i">
+                            <input type="text" name="cod" class="info" 
+                                   value="<%= n != null ? n : "" %>" readonly />
+                        </div>
                     </div>
-                    <div class="col-md-6">
-                        <input type="text" name="cod" class="form-control" 
-                               value="<%= n != null ? n : "" %>" readonly />
-                    </div>
-                </div>
-                <div class="row mb-4">
-                    <div class="col-md-6">
-                        <label for="fec" class="font-weight-bold">Fecha Reserva:</label>
-                    </div>
-                    <div class="col-md-6">
-                        <input type="text" name="fec" class="form-control" 
-                               value="<%= fecha != null ? fecha : "" %>" readonly />
+                    <div class="row-info">
+                        <div class="contenedor-t">
+                            <label for="fec" class="titulo-info">Fecha Reserva:</label>
+                        </div>
+                        <div class="contenedor-i">
+                            <input type="text" name="fec" class="info" 
+                                   value="<%= fecha != null ? fecha : "" %>" readonly />
+                        </div>
                     </div>
                 </div>
 
                 <!-- Subtítulo: Datos del Cliente -->
                 <h3 class="text-center">Datos del Cliente</h3>
-                <div class="row mb-3">
-                    <div class="col-md-6">
-                        <label for="nombre" class="font-weight-bold">Nombre:</label>
+                <div class="contendedor-datos">
+                    <div class="row-info">
+                        <div class="contenedor-t">
+                            <label for="nombre" class="titulo-info">Nombre:</label>
+                        </div>
+                        <div class="contenedor-i">
+                            <input type="text" name="nom" class="info" 
+                                   value="<%= c[0] %>" readonly />
+                        </div>
                     </div>
-                    <div class="col-md-6">
-                        <input type="text" name="nom" class="form-control" 
-                               value="<%= c[0] %>" readonly />
+                    <div class="row-info">
+                        <div class="contenedor-t">
+                            <label for="apellido" class="titulo-info">Apellido:</label>
+                        </div>
+                        <div class="contenedor-i">
+                            <input type="text" name="ape" class="info" 
+                                   value="<%= c[1] %>" readonly />
+                        </div>
                     </div>
-                </div>
-                <div class="row mb-3">
-                    <div class="col-md-6">
-                        <label for="apellido" class="font-weight-bold">Apellido:</label>
+                    <div class="row-info">
+                        <div class="contenedor-t">
+                            <label for="tdocumento" class="titulo-info">Tipo de Documento:</label>
+                        </div>
+                        <div class="contenedor-i">
+                            <input type="text" name="tdoc" class="info" 
+                                   value="<%= c[2] %>" readonly />
+                        </div>
                     </div>
-                    <div class="col-md-6">
-                        <input type="text" name="ape" class="form-control" 
-                               value="<%= c[1] %>" readonly />
+                    <div class="row-info">
+                        <div class="contenedor-t">
+                            <label for="dni" class="titulo-info">Numero de Documento:</label>
+                        </div>
+                        <div class="contenedor-i">
+                            <input type="text" name="numdoc" class="info" 
+                                   value="<%= c[3] %>" readonly />
+                        </div>
                     </div>
-                </div>
-                <div class="row mb-3">
-                    <div class="col-md-6">
-                        <label for="tdocumento" class="font-weight-bold">Tipo de Documento:</label>
+                    <div class="row-info">
+                        <div class="contenedor-t">
+                            <label for="telefono" class="titulo-info">Teléfono:</label>
+                        </div>
+                        <div class="contenedor-i">
+                            <input type="text" name="tel" class="info" 
+                                   value="<%= c[4] %>" readonly />
+                        </div>
                     </div>
-                    <div class="col-md-6">
-                        <input type="text" name="tdoc" class="form-control" 
-                               value="<%= c[2] %>" readonly />
-                    </div>
-                </div>
-                <div class="row mb-3">
-                    <div class="col-md-6">
-                        <label for="dni" class="font-weight-bold">Numero de Documento:</label>
-                    </div>
-                    <div class="col-md-6">
-                        <input type="text" name="numdoc" class="form-control" 
-                               value="<%= c[3] %>" readonly />
-                    </div>
-                </div>
-                <div class="row mb-3">
-                    <div class="col-md-6">
-                        <label for="telefono" class="font-weight-bold">Teléfono:</label>
-                    </div>
-                    <div class="col-md-6">
-                        <input type="text" name="tel" class="form-control" 
-                               value="<%= c[4] %>" readonly />
-                    </div>
-                </div>
-                <div class="row mb-3">
-                    <div class="col-md-6">
-                        <label for="correo" class="font-weight-bold">Correo:</label>
-                    </div>
-                    <div class="col-md-6">
-                        <input type="text" name="cor" class="form-control" 
-                               value="<%= c[5] %>" readonly />
+                    <div class="row-info">
+                        <div class="contenedor-t">
+                            <label for="correo" class="titulo-info">Correo:</label>
+                        </div>
+                        <div class="contenedor-i">
+                            <input type="text" name="cor" class="info" 
+                                   value="<%= c[5] %>" readonly />
+                        </div>
                     </div>
                 </div>
 
                 <!-- Subtítulo: Datos de la Reserva -->
                 <h3 class="text-center">Datos de la Reserva</h3>
-                <div class="row mb-3">
-                    <div class="col-md-6">
-                        <label for="codHab" class="font-weight-bold">Codigo Habitacion:</label>
+                <div class="contenedor-datos">
+                    <div class="contenedor-t">
+                        <label for="codHab" class="titulo-info">Codigo Habitacion:</label>
                     </div>
-                    <div class="col-md-6">
-                        <input type="text" name="codHab" class="form-control" 
+                    <div class="contenedor-i">
+                        <input type="text" name="codHab" class="info" 
                                value="<%= r[0] %>" readonly />
                     </div>   
 
 
-                    <div class="col-md-6">
-                        <label for="codHab" class="font-weight-bold">Tipo:</label>
+                    <div class="contenedor-t">
+                        <label for="codHab" class="titulo-info">Tipo:</label>
                     </div>
-                    <div class="col-md-6">
-                        <input type="text" name="" class="form-control" 
+                    <div class="contenedor-i">
+                        <input type="text" name="" class="info" 
                                value="<%= r[1] %>" readonly />
                     </div> 
 
 
-                    <div class="col-md-6">
-                        <label for="pre" class="font-weight-bold">Precio:</label>
+                    <div class="contenedor-t">
+                        <label for="pre" class="titulo-info">Precio:</label>
                     </div>
-                    <div class="col-md-6">
-                        <input type="text" name="" class="form-control" 
+                    <div class="contenedor-i">
+                        <input type="text" name="" class="info" 
                                value="<%= r[2] %>" readonly />
                     </div> 
 
 
-                    <div class="col-md-6">
-                        <label for="dias" class="font-weight-bold">Dia:</label>
+                    <div class="contenedor-t">
+                        <label for="dias" class="titulo-info">Dia:</label>
                     </div>
-                    <div class="col-md-6">
-                        <input type="text" name="dias" class="form-control" 
+                    <div class="contenedor-i">
+                        <input type="text" name="dias" class="info" 
                                value="<%= r[3] %>" readonly />
                     </div> 
 
-                    <div class="col-md-6">
-                        <label for="feE" class="font-weight-bold">Fecha Entrada:</label>
+                    <div class="contenedor-t">
+                        <label for="feE" class="titulo-info">Fecha Entrada:</label>
                     </div>
-                    <div class="col-md-6">
-                        <input type="text" name="feE" class="form-control" 
+                    <div class="contenedor-i">
+                        <input type="text" name="feE" class="info" 
                                value="<%= r[4] %>" readonly />
                     </div> 
 
-                    <div class="col-md-6">
-                        <label for="feS" class="font-weight-bold">Fecha Salida:</label>
+                    <div class="contenedor-t">
+                        <label for="feS" class="titulo-info">Fecha Salida:</label>
                     </div>
-                    <div class="col-md-6">
-                        <input type="text" name="feS" class="form-control" 
+                    <div class="contenedor-i">
+                        <input type="text" name="feS" class="info" 
                                value="<%= r[5] %>" readonly />
                     </div> 
 
 
-                    <div class="col-md-6">
-                        <label for="tot" class="font-weight-bold">Total:</label>
+                    <div class="contenedor-t">
+                        <label for="tot" class="titulo-info">Total:</label>
                     </div>
-                    <div class="col-md-6">
-                        <input type="text" name="tot" class="form-control" 
+                    <div class="contenedor-i">
+                        <input type="text" name="tot" class="info" 
                                value="<%= r[6] %>" readonly/>
                     </div> 
                     <div class="text-center">
-                            <input type="submit" name="acc" class="btn btn-info" value="Guardar"/>
+                            <input type="submit" name="acc" class="btn" value="Guardar"/>
                     </div>
                 </div>
             </form>
-            <div class="text-center">
+            <div class="text-center contenedorbtn">
                 <form action="ControlReserva" method="Post" class="d-inline">
-                    <input type="submit" name="acc" class="btn btn-info" value="Volver"/>
+                    <input type="submit" name="acc" class="btn" value="Volver"/>
                 </form>
             </div>
         </div>
-                    
-             
-        
     </body>
 </html>
