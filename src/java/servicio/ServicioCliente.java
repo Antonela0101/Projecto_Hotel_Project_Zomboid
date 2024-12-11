@@ -12,8 +12,8 @@ public class ServicioCliente {
     
     //Cliente
       // Seleccionar cliente
-    public Object enviarCliente(String nombre, String apellido, String tdocumento, String dni, String telefono, String correo) {
-        cli.enviarCliente(nombre, apellido, tdocumento, dni, telefono, correo);
+    public Object enviarCliente(String nombre, String apellido, String tdocumento, String numdoc, String telefono, String correo) {
+        cli.enviarCliente(nombre, apellido, tdocumento, numdoc, telefono, correo);
         return cli.getDcliente();
     }
     

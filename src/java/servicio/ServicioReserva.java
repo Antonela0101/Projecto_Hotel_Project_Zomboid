@@ -1,7 +1,6 @@
 package servicio;
 
 import negocio.Reserva;
-import persistencia.DaoHabitacion;
 import persistencia.DaoReserva;
 
 public class ServicioReserva {
