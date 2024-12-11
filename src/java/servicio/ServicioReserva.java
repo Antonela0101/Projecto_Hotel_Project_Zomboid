@@ -1,5 +1,6 @@
 package servicio;
 
+import java.util.List;
 import negocio.Reserva;
 import persistencia.DaoReserva;
 
@@ -53,5 +54,8 @@ public class ServicioReserva {
     public String obtenerFecha(){
         String fecha = res.getFecha();
         return fecha;
+    }
+    public static List listar() {
+         return DaoReserva.listar();
     }
 }
