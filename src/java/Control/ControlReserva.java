@@ -50,11 +50,11 @@ public class ControlReserva extends HttpServlet {
             String ape = request.getParameter("ape");
             String tdoc = request.getParameter("tdoc");
             System.out.println("Tipo de Documento: " + tdoc); 
-            String dni = request.getParameter("numdoc");
+            String numdoc = request.getParameter("numdoc");
             String tel = request.getParameter("tel");
             String cor = request.getParameter("cor");
             
-            modelo.setFila((Object[]) servRes.enviarCliente(nom, ape, tdoc, dni, tel, cor));
+            modelo.setFila((Object[]) servCli.enviarCliente(nom, ape, tdoc, numdoc, tel, cor));
            
             String codHab = request.getParameter("codHab");
             String tip = request.getParameter("tip");

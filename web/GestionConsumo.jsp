@@ -10,10 +10,17 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        <style>@import "Emp.css"</style>
     </head>
     <body>
-        <%@include file="Header.jsp"%>
-        <h1>Hello World!</h1>
-        
+        <div class="container">
+            <h1>Hotel - Menu Principal</h1>
+            <div class="inputContainer" style="text-align: center">
+                <form action="ControlAlojamiento" method="Post">
+                    <input type="submit" name="acc" value="Nuevo Alojamiento"/>
+                </form>
+            </div>
+        </div>
     </body>
 </html>
+

@@ -1,7 +1,7 @@
 package servicio;
 
+import java.util.List;
 import negocio.Reserva;
-import persistencia.DaoHabitacion;
 import persistencia.DaoReserva;
 
 public class ServicioReserva {
@@ -22,15 +22,6 @@ public class ServicioReserva {
         res.enviarReserva(codHab, tip, pre, dia, feE, feS, tot);
         return res.getDreserva();
     }
-    
-    
-    //Cliente
-      // Seleccionar cliente
-    public Object enviarCliente(String nombre, String apellido, String tdocumento, String dni, String telefono, String correo) {
-        res.enviarCliente(nombre, apellido, tdocumento, dni, telefono, correo);
-        return res.getDcliente();
-    }
-    
     
     public String verTotal() {
         if (res != null) {
@@ -63,5 +54,8 @@ public class ServicioReserva {
     public String obtenerFecha(){
         String fecha = res.getFecha();
         return fecha;
+    }
+    public static List listar() {
+         return DaoReserva.listar();
     }
 }
