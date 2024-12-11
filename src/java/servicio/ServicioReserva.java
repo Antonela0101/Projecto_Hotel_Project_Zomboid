@@ -23,15 +23,6 @@ public class ServicioReserva {
         return res.getDreserva();
     }
     
-    
-    //Cliente
-      // Seleccionar cliente
-    public Object enviarCliente(String nombre, String apellido, String tdocumento, String dni, String telefono, String correo) {
-        res.enviarCliente(nombre, apellido, tdocumento, dni, telefono, correo);
-        return res.getDcliente();
-    }
-    
-    
     public String verTotal() {
         if (res != null) {
             return String.valueOf(res.getTotal());
