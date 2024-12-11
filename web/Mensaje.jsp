@@ -3,10 +3,11 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <style>@import "CSS/reserva.css";</style>
         <title>JSP Page</title>
     </head>
     <body>
-        <div class="container mt-5">
+        <div class="container">
             <h1 class="text-center">Mensaje</h1>
             <% String c = (String) request.getAttribute("msgC"); %>
             <% String r = (String) request.getAttribute("msgR"); %>

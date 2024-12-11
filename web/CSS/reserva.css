@@ -1,0 +1,164 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #191617;
+    color: #5b4033;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h3 {
+    color: #5b4033;
+    text-align: center;
+}
+
+.container, .container-doc {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 1000px;
+    background-color: #ffff;
+    border: 1px solid #d2b48c;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    align-content: center;
+    align-items: center;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.table th {
+    background-color: #191617;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+.table td {
+    border: 1px solid #d2b48c;
+    padding: 10px;
+    text-align: center;
+}
+
+input[type="text"], input[type="date"] {
+    border: 1px solid #d2b48c;
+    border-radius: 5px;
+    padding: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.tipo{
+    border: 1px solid #d2b48c;
+    border-radius: 5px;
+    padding: 5px;
+    width: 200px;
+    box-sizing: border-box;
+}
+
+label {
+    font-weight: bold;
+    color: #5b4033;
+}
+
+.respuesta {
+    width: 50%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #d2b48c;
+    border-radius: 5px;
+}
+
+.titulo-info, .titulo-formulario {
+    display: block;
+    margin-bottom: 5px;
+}
+
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #191617;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #6a3510;
+}
+
+.alerta {
+    background-color: #fdf1e7;
+    color: #5b4033;
+    padding: 15px;
+    border: 1px solid #d2b48c;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.contenedorbtn {
+    margin-top: 20px;
+}
+
+.row-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.contenedor-t, .contenedor-i {
+    flex: 1;
+    margin-right: 10px;
+}
+
+
+.contenedor-t:last-child, .contenedor-i:last-child {
+    margin-right: 0;
+}
+
+.titulos {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.contenedorbtn {
+    display: flex !important;
+    justify-content: center; /* Centra los botones horizontalmente */
+    gap: 10px; /* Espaciado entre los botones */
+}
+
+.contenedorbtn .btn {
+    padding: 10px 20px; /* Ajusta el tamaño del botón */
+    font-size: 16px; /* Tamaño del texto del botón */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+}
+
+.row{
+    display: flex;
+}
+.contenedor-cliente {
+    width: 100%;  
+    max-width: 100%; 
+    align-content: center;
+    align-items: center;
+}
+
+.contenedor-cli{
+    margin-right: 50px;
+}
