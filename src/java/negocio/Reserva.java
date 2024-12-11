@@ -8,7 +8,6 @@ import java.util.Date;
 
 public class Reserva {
     private Object[] linea = new Object[6];
-    private Object[] dcliente = new Object[6];
     private Object[] dreserva = new Object[7];
     private Object[] datosR = new Object[8];
     private String[] columnasR = {"cod","fec","fei", "fes", "dias", "tot","codhab","numdoc"};
@@ -38,15 +37,6 @@ public class Reserva {
         dreserva[6] = tot;
     }
     
-    public void enviarCliente(String nom, String ape, String tdoc, String numdoc, String tel, String cor) {
-        dcliente[0] = nom;
-        dcliente[1] = ape;
-        dcliente[2] = tdoc;
-        dcliente[3] = numdoc;
-        dcliente[4] = tel;
-        dcliente[5] = cor;
-    }
-    
     public int getDias() {
         long dias = ChronoUnit.DAYS.between(feE, feS);
         return (int) dias;
@@ -60,6 +50,7 @@ public class Reserva {
     
     // Método para guardar la reserva, recibiendo los parámetros como String
     public void guardar(String cod, String fec, String feE, String feS,String diasStr, String totStr,String codHab, String numdoc) {
+        //deburacion antes de conversion de datos
         System.out.println("Método guardar invocado con valores iniciales.");
         System.out.println("Valores recibidos: ");
         System.out.println("cod: " + cod);
@@ -70,25 +61,22 @@ public class Reserva {
         System.out.println("feS: " + feS);
         System.out.println("totStr: " + totStr);
         System.out.println("numdocStr: " + numdoc);
+        //formateo de datos
+        int dias = Integer.parseInt(diasStr);  
+        double total = Double.parseDouble(totStr);
 
-        // Convertir los valores numéricos solo donde corresponda
-        int dias = Integer.parseInt(diasStr);  // días es un entero
-        double total = Double.parseDouble(totStr);  // total es un valor decimal
+        java.sql.Date fecha = java.sql.Date.valueOf(fec); 
+        java.sql.Date fechaEntrada = java.sql.Date.valueOf(feE); 
+        java.sql.Date fechaSalida = java.sql.Date.valueOf(feS); 
 
-        // Convertir las fechas de String a java.sql.Date
-        java.sql.Date fecha = java.sql.Date.valueOf(fec);  // fecha es una cadena en formato 'yyyy-MM-dd'
-        java.sql.Date fechaEntrada = java.sql.Date.valueOf(feE);  // igual para fechaEntrada
-        java.sql.Date fechaSalida = java.sql.Date.valueOf(feS);  // igual para fechaSalida
-
-        // Guardar los valores en el arreglo 'datosR'
-        datosR[0] = cod;  // cod es String
-        datosR[1] = fecha;  // fecha es java.sql.Date
-        datosR[2] = fechaEntrada;  // fechaEntrada es java.sql.Date
-        datosR[3] = fechaSalida;  // fechaSalida es java.sql.Date
-        datosR[4] = dias;  // días es int
-        datosR[5] = total;  // total es double
-        datosR[6] = codHab;  // codHab es String
-        datosR[7] = numdoc;  // numdoc es int
+        datosR[0] = cod;  
+        datosR[1] = fecha;  
+        datosR[2] = fechaEntrada; 
+        datosR[3] = fechaSalida; 
+        datosR[4] = dias; 
+        datosR[5] = total; 
+        datosR[6] = codHab; 
+        datosR[7] = numdoc; 
 
         // Imprimir los datos en la consola para depuración
         System.out.println("Datos guardados en el objeto res: ");
@@ -112,10 +100,6 @@ public class Reserva {
     // Corregir el retorno de los métodos para que devuelvan arreglos
     public Object[] getLinea() {
         return linea; 
-    }
-
-    public Object[] getDcliente() {
-        return dcliente;
     }
     
     public Object[] getDreserva(){
