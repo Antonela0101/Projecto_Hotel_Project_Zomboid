@@ -20,7 +20,9 @@
             </div>
             <nav>
                 <a href="index.jsp">Inicio</a>
-                <a href="Reserva.jsp">Reserva</a>
+                <form action="ControlReserva" method="Post" class="d-inline">
+                    <input type="submit" name="acc" class="nav" value="Reserva"/>
+                </form>
                 <a href="Empleado.jsp">Empleado</a>
             </nav>
         </header>
